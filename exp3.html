@@ -1,0 +1,129 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<title>Registration form</title>
+</head>
+<style>
+body
+{
+    background-image: url(' gradient.jpg');
+    background-size:contain;
+     
+
+
+}
+input[name="Full name:"],
+input[name="Email Address:"] ,
+input[name="Country"] ,
+ 
+input[name="Confirm password:"] ,
+input[name="Password:"] 
+
+
+{
+       border: none;
+  border-bottom: 2px solid #ccc;
+  background: transparent;
+  padding: 10px 5px;
+  width: 70%;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s;
+  color: #333;
+}
+
+ 
+
+fieldset
+{ 
+   margin-top: 25px;
+  margin-bottom: 500px;
+  margin-right: 50px;
+  margin-left: 1000px;  
+   
+  backdrop-filter:blur(10px);
+  background-color: rgba(22,21,21,0.2);
+  border-radius:20px; 
+  color: rgb(193, 193, 199);
+  font-size:x-large;
+ 
+}
+   
+</style>
+<body>
+
+ <form>
+<fieldset>
+<h1 style="text-align:center; color:rgb(15, 15, 17);  font-size:200%">Registration form</h1>
+
+
+<label for="Full name">Name:<label>
+<input id="name" name="Full name:"  ><br><br>
+
+<label for="Address"> Email Address:<label>
+<input type="email" id="Address" name="Email Address:"><br><br>
+
+<label for="Pass">Password:<label>
+<input type="password" id="Pass" name="Password:"><br><br>
+
+<label for="conpass">Confirm Password:<label>
+<input type="password" id="conpass" name="Confirm password:"><br>
+
+<p>Gender:<p>
+<label for="mal">Male<label>
+<input type="radio" id="mal" name="Gender:" value="male">
+
+<label for="fem">female<label>
+<input type="radio" id="fem" name="Gender:" value="Female">
+
+<p>Hobbies:</p>
+<label for="cyc">Cycling<label>
+<input id="cyc" name="Hobby:" type="checkbox" values="cycling">
+
+<label for="Bk">Book reading<label>
+<input id="Bk" name="Hobby:" type="checkbox" values="Book reading">
+
+<label for="sw">Swimming<label>
+<input id="sw" name="Hobby" type="checkbox" values="Swimming">
+
+<label for="pc">Playing Cricket<label>
+<input id="pc" name="Hobby" type="checkbox" values="playing Cricket">
+<br><br>
+<Label for="dt">Date:<label>
+
+<input type="date" id="dt" name="Date:" ><br><br>
+
+<label for="pp:">Profile picture:<label>
+<input type="file" name="Profile picture" id="pp">
+<br>
+<br>
+
+<label for="cn">Country:<label>
+<select id="cn" name=Country> 
+<option   value="india">India</option>
+<option   value="Usa">USA</option>
+<option   value="China">China</option>
+<option   value="Russia">Russia</option> 
+<option   value="Uk">UK</option>
+</select><br><br>
+
+<label for="tx">Comment:</label><br>
+<textarea id="tx" name="Comment:" rows="5" cols="70">
+</textarea><br><br>
+
+<button  ><a href=" server2.html">Register</a></button><br><br>
+
+<input type="reset">
+
+
+
+</fieldset>
+</form>
+
+
+
+
+
+</body>
+</html>
+
