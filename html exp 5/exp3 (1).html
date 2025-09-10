@@ -1,0 +1,137 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<title>Registration form</title>
+<style>
+body {
+    background-image: url('gradient.png');
+    background-size:contain;
+     
+    font-family: Arial, sans-serif;
+}
+
+/* Inputs */
+input[name], select, textarea {
+    border: none;
+    border-bottom: 2px solid #ccc;
+    background: transparent;
+    padding: 10px 5px;
+    width: 70%;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.5s ease-in-out, box-shadow 0.3s ease-in-out;
+    color: #333;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: dodgerblue;
+    box-shadow: 0px 2px 8px rgba(30,144,255,0.3);
+}
+
+/* Form box */
+fieldset {
+    margin: 10px 120px 500px 1000px;
+    backdrop-filter: blur(10px);
+    background-color: rgba(22,21,21,0.2);
+    border-radius: 20px; 
+    color: rgb(193,193,199);
+    font-size: large;
+    animation: fadeSlide 1.5s ease-out;
+}
+
+@keyframes fadeSlide {
+    from { opacity: 0; transform: translateX(100px);}
+    to { opacity: 1; transform: translateX(0);}
+}
+
+/* Buttons */
+button {
+    background: dodgerblue;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+button:hover {
+    background: deepskyblue;
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(0,191,255,0.7);
+}
+input[type="reset"] {
+    background: lightgrey;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+input[type="reset"]:hover {
+    background: grey;
+    color: white;
+}
+
+/* Headline */
+h1 {
+    text-align:center;
+    color: black;
+    font-size: 200%;
+}
+</style>
+</head>
+<body>
+<form>
+<fieldset>
+<h1>Registration form</h1>
+
+<label>Name:</label><br>
+<input id="name" name="Full name:" type="text"><br><br>
+
+<label>Email Address:</label><br>
+<input type="email" id="Address" name="Email Address:"><br><br>
+
+<label>Password:</label><br>
+<input type="password" id="Pass" name="Password:"><br><br>
+
+<label>Confirm Password:</label><br>
+<input type="password" id="conpass" name="Confirm password:"><br><br>
+
+ <p>Gender:</p>
+<label for="mal">Male</label>
+<input type="radio" id="mal" name="Gender:" value="male"><br>
+
+<label for="fem">female</label>
+<input type="radio" id="fem" name="Gender:" value="Female">
+
+
+<p>Hobbies:</p>
+<label>Cycling</label><input type="checkbox" value="cycling">
+<label>Book reading</label><input type="checkbox" value="book reading">
+<label>Swimming</label><input type="checkbox" value="swimming">
+<label>Playing Cricket</label><input type="checkbox" value="cricket"><br><br>
+
+<label>Date:</label><br>
+<input type="date" name="Date:"><br><br>
+
+<label>Profile picture:</label><br>
+<input type="file" name="Profile picture"><br><br>
+
+<label>Country:</label><br>
+<select name="Country"> 
+<option value="India">India</option>
+<option value="USA">USA</option>
+<option value="China">China</option>
+<option value="Russia">Russia</option>
+<option value="UK">UK</option>
+</select><br><br>
+
+<label>Comment:</label><br>
+<textarea name="Comment:" rows="2" cols="50"></textarea><br><br>
+
+<button><a href="server2.html" style="text-decoration:none;color:white;">Register</a></button><br><br>
+<input type="reset" value="Reset">
+</fieldset>
+</form>
+</body>
+</html>

@@ -1,0 +1,75 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<title>Submission Successful</title>
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fad0c4, #ffdde1);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+@keyframes gradientBG {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+h1 {
+    color: #333;
+    font-size: 2.5rem;
+    text-align: center;
+    animation: fadeIn 2s ease forwards;
+    opacity: 0;
+}
+
+@keyframes fadeIn {
+    to {opacity: 1;}
+}
+
+img {
+    width: 200px;
+    height: 200px;
+    margin-top: 20px;
+    animation: pulse 2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+    0% {transform: scale(1);}
+    50% {transform: scale(1.2);}
+    100% {transform: scale(1);}
+}
+
+button {
+    margin-top: 30px;
+    padding: 12px 25px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    background: #ff6f61;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #ff3b2e;
+}
+</style>
+</head>
+<body>
+
+<h1>Your response has been successfully submitted!</h1>
+<img src="thumps up.jpg" alt="Done">
+<button onclick="window.location.href='exp3 (1).html'">Back to Form</button>
+
+</body>
+</html>
+
