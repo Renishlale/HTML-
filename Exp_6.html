@@ -1,0 +1,78 @@
+ <!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Experiments</title>
+  <style>
+    body{font-size:20px;font-family:Arial;}
+    h2{color:blue;}
+  </style>
+</head>
+<body>
+<script>
+// 6.1 Variables & Data Types
+document.write("<h2>6.1 Variables & Data Types</h2>");
+var name="Renish", age=21, student=true;
+document.write(name+" ("+typeof name+")<br>");
+document.write(age+" ("+typeof age+")<br>");
+document.write(student+" ("+typeof student+")<hr>");
+
+// 6.2 Arithmetic Operators
+document.write("<h2>6.2 Arithmetic Operators</h2>");
+var a=15,b=4;
+document.write("Add: "+(a+b)+"<br>");
+document.write("Sub: "+(a-b)+"<br>");
+document.write("Mul: "+(a*b)+"<br>");
+document.write("Div: "+(a/b)+"<br>");
+document.write("Mod: "+(a%b)+"<hr>");
+
+// 6.3 Simple Calculator
+document.write("<h2>6.3 Simple Calculator</h2>");
+var x=10,y=2,op="*";
+if(op=="+") document.write(x+y);
+else if(op=="-") document.write(x-y);
+else if(op=="*") document.write(x*y);
+else if(op=="/") document.write(x/y);
+document.write("<hr>");
+
+// 6.4 Voting Eligibility
+document.write("<h2>6.4 Voting Eligibility</h2>");
+var ageVote=17;
+if(ageVote>=18) document.write("Eligible to vote");
+else document.write("Not eligible to vote");
+document.write("<hr>");
+
+// 6.5 Grading System
+document.write("<h2>6.5 Grading System</h2>");
+var m=68;
+if(m>=90) document.write("Grade A");
+else if(m>=75) document.write("Grade B");
+else if(m>=50) document.write("Grade C");
+else document.write("Fail");
+document.write("<hr>");
+
+// 6.6 Day of Week
+document.write("<h2>6.6 Day of the Week</h2>");
+var d=3;
+switch(d){
+  case 1:document.write("Monday");break;
+  case 2:document.write("Tuesday");break;
+  case 3:document.write("Wednesday");break;
+  case 4:document.write("Thursday");break;
+  case 5:document.write("Friday");break;
+  case 6:document.write("Saturday");break;
+  case 7:document.write("Sunday");break;
+}
+document.write("<hr>");
+
+// 6.7 Even/Odd & Largest
+document.write("<h2>6.7 Even or Odd & Largest</h2>");
+var n=7;
+if(n%2==0) document.write(n+" is Even<br>");
+else document.write(n+" is Odd<br>");
+var n1=12,n2=25,n3=8;
+if(n1>=n2 && n1>=n3) document.write("Largest: "+n1);
+else if(n2>=n1 && n2>=n3) document.write("Largest: "+n2);
+else document.write("Largest: "+n3);
+</script>
+</body>
+</html>
