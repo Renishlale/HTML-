@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+    <head>
+        <title>
+            Even nmuber
+        </title>
+    </head>
+    <body>
+        <h1> Number:323</h1>
+        <h1>Sum of the digits</h1>
+     
+    <h1 id="demo">
+
+    </h1>
+    <script>
+        let n=323;
+        let sum=0;
+        let text="";
+    
+        do
+        {
+            let digit=n%10;
+            sum=sum+digit;
+             text=text+digit+"<br>";
+            n=(n-digit)/10;
+            
+        }
+        while(n !=0)
+         text =text+"<br>Sum of digits = " + sum;
+   
+    document.getElementById("demo").innerHTML=text;
+    </script>
+    </body>
+    </html>
+    
+
+        
+    
