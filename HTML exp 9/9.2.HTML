@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Max and Min in Array</title>
+</head>
+<body style="font-size:25px;">
+
+<h2>Find Maximum and Minimum in an Array</h2>
+<p id="result"></p>
+
+<script>
+   
+  let arr = [12, 45, 7, 89, 23, 56, 3, 19];
+
+   
+  let max = arr[0];
+  let min = arr[0];
+
+   
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] > max) max = arr[i];
+    if (arr[i] < min) min = arr[i];
+  }
+
+   
+  document.getElementById("result").innerHTML = 
+    "Array: " + arr + "<br>Maximum: " + max + "<br>Minimum: " + min;
+</script>
+
+</body>
+</html>

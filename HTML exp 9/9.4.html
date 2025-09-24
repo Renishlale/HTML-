@@ -1,0 +1,31 @@
+ <!DOCTYPE html>
+<html>
+<head>
+  <title>Linear Search</title>
+</head>
+<body>
+    <h1>Linear search</h1>
+    <h2>Array:[10, 20, 30, 40, 50]</h2>
+    <h3>Element to be searched:30</h3>
+
+
+<script>
+  let arr = [10, 20, 30, 40, 50];
+  let target = 30;
+  let found = false;
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === target) {
+      document.write(target + " found at position " + (i+1));
+      found = true;
+      break;
+    }
+  }
+
+  if (!found) {
+    document.write(target + " not found");
+  }
+</script>
+
+</body>
+</html>

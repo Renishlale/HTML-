@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Reverse Array Simple</title>
+</head>
+<body style="font-size:25px;">
+
+<h2>Reverse Array </h2>
+<p id="original"></p>
+<p id="reversed"></p>
+
+<script>
+  let arr = [1,2,3,4,5,6,7,8,9,10];
+
+  // Display original array
+  let text = "";
+  for(let i=0; i<arr.length; i++){
+    text = text + arr[i] + " ";
+  }
+  document.getElementById("original").innerHTML = "Original Array: " + text;
+
+  // Display reversed array without modifying the array
+  let revText = "";
+  for(let i=arr.length-1; i>=0; i--){
+    revText = revText + arr[i] + " ";
+  }
+  document.getElementById("reversed").innerHTML = "Reversed Array: " + revText;
+
+</script>
+
+</body>
+</html>
