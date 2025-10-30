@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+class News {
+  constructor(){ this.subs=[] }
+  add(fn){ this.subs.push(fn) }
+  send(msg){ this.subs.forEach(f=>f(msg)) }
+}
+
+let n=new News()
+
+function user(msg){ console.log(msg) }
+
+n.add(user)
+n.send("Hello World")
+</script>
+
+</body>
+</html>
