@@ -1,0 +1,20 @@
+ <!DOCTYPE html>
+<html>
+<body>
+
+<h3>Callback Example</h3>
+
+<script>
+function doForEach(arr, callback) {
+  for (let n of arr) {
+    callback(n);
+  }
+}
+
+doForEach([1, 2, 3], function(n) {
+  document.write(n + "<br>");
+});
+</script>
+
+</body>
+</html>
