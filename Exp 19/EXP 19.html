@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EXP 19 - AJAX Form Submission</title>
+    <style>
+        body { font-family: Arial; padding: 20px; }
+        input, button { padding: 10px; margin: 5px; width: 250px; }
+        #message { margin-top: 10px; font-weight: bold; }
+        #loading { display: none; color: blue; }
+    </style>
+</head>
+<body>
+
+<h2>EXP 19 - AJAX Form Submission</h2>
+
+<input type="text" id="name" placeholder="Enter Name"><br>
+<input type="email" id="email" placeholder="Enter Email"><br>
+<button onclick="submitForm()">Submit</button>
+
+<p id="loading">Submitting, please wait...</p>
+<p id="message"></p>
+
+<script>
+function submitForm() {
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message");
+    const loading = document.getElementById("loading");
+
+    message.textContent = "";
+
+    if (name === "" || email === "") {
+        message.style.color = "red";
+        message.textContent = "Please fill all fields!";
+        return;
+    }
+
+    loading.style.display = "block";
+
+    fetch("https://jsonplaceholder.typicode.com/posts", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email })
+    })
+    .then(res => res.json())
+    .then(data => {
+        loading.style.display = "none";
+        message.style.color = "green";
+        message.textContent = "Form submitted successfully!";
+        console.log("Server Response:", data);
+    })
+    .catch(() => {
+        loading.style.display = "none";
+        message.style.color = "red";
+        message.textContent = "Error submitting form!";
+    });
+}
+</script>
+
+</body>
+</html>
