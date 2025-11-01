@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EXP 15b - To-Do List JS & Local Storage</title>
+</head>
+<body>
+    <h2>EXP 15b - To-Do List</h2>
+    <input type="text" id="taskInput" placeholder="Enter task">
+    <button onclick="addTask()">Add Task</button>
+    <ul id="taskList"></ul>
+
+    <script>
+        let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+
+        function saveTasks() {
+            localStorage.setItem('tasks', JSON.stringify(tasks));
+        }
+
+        function addTask() {
+            const input = document.getElementById('taskInput');
+            const task = input.value.trim();
+            if(!task) return;
+            tasks.push({ name: task, completed: false });
+            saveTasks();
+            input.value = '';
+            renderTasks();
+        }
+
+        function toggleComplete(index) {
+            tasks[index].completed = !tasks[index].completed;
+            saveTasks();
+            renderTasks();
+        }
+
+        function deleteTask(index) {
+            tasks.splice(index, 1);
+            saveTasks();
+            renderTasks();
+        }
+
+        function renderTasks() {
+            const list = document.getElementById('taskList');
+            list.innerHTML = '';
+            tasks.forEach((task, i) => {
+                const li = document.createElement('li');
+                li.textContent = task.name;
+                li.style.textDecoration = task.completed ? 'line-through' : 'none';
+                li.onclick = () => toggleComplete(i);
+                const delBtn = document.createElement('button');
+                delBtn.textContent = 'Delete';
+                delBtn.onclick = (e) => { e.stopPropagation(); deleteTask(i); };
+                li.appendChild(delBtn);
+                list.appendChild(li);
+            });
+        }
+
+        renderTasks();
+    </script>
+</body>
+</html>
