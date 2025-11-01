@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head><title>EXP16c - Interactive UI</title></head>
+<body>
+<h2>Interactive UI</h2>
+<div id="box" style="width:150px;height:150px;background:lightblue;text-align:center;line-height:150px;margin-bottom:10px;">Hover/Click</div>
+<input id="input" placeholder="Type here">
+<p id="out"></p>
+
+<script>
+const box=document.getElementById("box");
+const input=document.getElementById("input");
+const out=document.getElementById("out");
+
+box.onmouseenter=()=>box.style.background="lightgreen";
+box.onmouseleave=()=>box.style.background="lightblue";
+box.onclick=()=>alert("Box clicked!");
+input.oninput=()=>out.textContent="You typed: "+input.value;
+</script>
+</body>
+</html>

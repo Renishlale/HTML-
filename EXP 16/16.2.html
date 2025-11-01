@@ -1,0 +1,20 @@
+ <!DOCTYPE html>
+<html>
+<head>
+    <title>EXP16b - Efficient DOM</title>
+</head>
+<body>
+<h2>Efficient DOM Manipulation</h2>
+<button id="addParaBtn">Add Paragraph</button>
+<div id="paraContainer"></div>
+
+<script>
+document.getElementById("addParaBtn").addEventListener("click", () => {
+    const container = document.getElementById("paraContainer");
+    const p = document.createElement("p");
+    p.textContent = "Paragraph added dynamically!";
+    container.appendChild(p);
+});
+</script>
+</body>
+</html>

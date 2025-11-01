@@ -1,0 +1,125 @@
+ <!DOCTYPE html>
+<html>
+<head>
+    <title>EXP 16 - Complete DOM & Interactive Elements</title>
+    <style>
+        #hoverBox {
+            width:150px; height:150px; background-color: lightblue;
+            display:flex; align-items:center; justify-content:center;
+            margin-bottom:20px; cursor:pointer;
+        }
+        #carousel {
+            width:300px; height:200px; margin-top:20px; position:relative;
+        }
+        #carousel img {
+            width:100%; height:100%;
+        }
+        ul li {
+            margin:5px 0;
+        }
+        ul li button {
+            margin-left:10px;
+        }
+    </style>
+</head>
+<body>
+<h2>EXP 16 - Complete DOM & Interactive Elements</h2>
+
+<!-- Dynamic List -->
+<h3>Dynamic List</h3>
+<input id="itemInput" placeholder="Enter item">
+<button onclick="addItem()">Add</button>
+<ul id="list"></ul>
+
+<!-- Efficient DOM -->
+<h3>Efficient DOM</h3>
+<button id="addParaBtn">Add Paragraphs</button>
+<div id="paraContainer"></div>
+
+<!-- Interactive UI -->
+<h3>Interactive UI</h3>
+<div id="hoverBox">Hover/Click Me</div>
+<input id="inputBox" placeholder="Type here">
+<p id="output"></p>
+
+<!-- Image Carousel -->
+<h3>Image Carousel</h3>
+<img id="carouselImg" src="https://via.placeholder.com/300x200/ff7f7f">
+<br>
+<button onclick="prevImg()">Prev</button>
+<button onclick="nextImg()">Next</button>
+<button onclick="startAutoplay()">Start Autoplay</button>
+<button onclick="stopAutoplay()">Stop Autoplay</button>
+
+<script>
+// --- Dynamic List with delete and complete ---
+function addItem() {
+    const input = document.getElementById("itemInput");
+    const value = input.value.trim();
+    if(!value) return;
+
+    const li = document.createElement("li");
+    li.textContent = value;
+
+    // Complete button
+    const completeBtn = document.createElement("button");
+    completeBtn.textContent = "Complete";
+    completeBtn.onclick = () => li.style.textDecoration = "line-through";
+    li.appendChild(completeBtn);
+
+    // Delete button
+    const delBtn = document.createElement("button");
+    delBtn.textContent = "Delete";
+    delBtn.onclick = () => li.remove();
+    li.appendChild(delBtn);
+
+    document.getElementById("list").appendChild(li);
+    input.value="";
+}
+
+// --- Efficient DOM: add multiple paragraphs ---
+document.getElementById("addParaBtn").addEventListener("click", () => {
+    const container = document.getElementById("paraContainer");
+    const fragment = document.createDocumentFragment();
+    for(let i=1;i<=3;i++){
+        const p = document.createElement("p");
+        p.textContent = `Paragraph ${i} added efficiently.`;
+        fragment.appendChild(p);
+    }
+    container.appendChild(fragment);
+});
+
+// --- Interactive UI ---
+const box = document.getElementById("hoverBox");
+const input = document.getElementById("inputBox");
+const output = document.getElementById("output");
+
+box.onmouseenter = ()=> box.style.backgroundColor="lightgreen";
+box.onmouseleave = ()=> box.style.backgroundColor="lightblue";
+box.onclick = ()=> box.style.backgroundColor = box.style.backgroundColor === "yellow" ? "lightblue" : "yellow";
+input.oninput = ()=> output.textContent = `You typed (${input.value.length} chars): ` + input.value;
+
+// --- Image Carousel with autoplay ---
+const carouselImages = [
+    "https://via.placeholder.com/300x200/ff7f7f",
+    "https://via.placeholder.com/300x200/7fbfff",
+    "https://via.placeholder.com/300x200/7fff7f"
+];
+let currentImg = 0;
+let autoplayInterval;
+const carouselImg = document.getElementById("carouselImg");
+
+function showImg(){ carouselImg.src = carouselImages[currentImg]; }
+function nextImg(){ currentImg=(currentImg+1)%carouselImages.length; showImg(); }
+function prevImg(){ currentImg=(currentImg-1+carouselImages.length)%carouselImages.length; showImg(); }
+function startAutoplay(){ autoplayInterval = setInterval(nextImg,2000); }
+function stopAutoplay(){ clearInterval(autoplayInterval); }
+
+document.addEventListener("keydown", e => {
+    if(e.key==="ArrowRight") nextImg();
+    if(e.key==="ArrowLeft") prevImg();
+});
+
+</script>
+</body>
+</html>

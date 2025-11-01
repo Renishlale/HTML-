@@ -1,0 +1,35 @@
+ <!DOCTYPE html>
+<html>
+<head>
+    <title>Carousel Test</title>
+</head>
+<body>
+<h2>Image Carousel</h2>
+<img id="carouselImg" src="https://via.placeholder.com/300x200/ff7f7f" width="300" height="200">
+<br>
+<button onclick="prevImg()">Prev</button>
+<button onclick="nextImg()">Next</button>
+
+<script>
+const imgs = [
+    "https://via.placeholder.com/300x200/ff7f7f",
+    "https://via.placeholder.com/300x200/7fbfff",
+    "https://via.placeholder.com/300x200/7fff7f"
+];
+let current = 0;
+const carouselImg = document.getElementById("carouselImg");
+
+function showImg() {
+    carouselImg.src = imgs[current];
+}
+function nextImg() {
+    current = (current + 1) % imgs.length;
+    showImg();
+}
+function prevImg() {
+    current = (current - 1 + imgs.length) % imgs.length;
+    showImg();
+}
+</script>
+</body>
+</html>
