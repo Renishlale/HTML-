@@ -1,0 +1,14 @@
+INSERT INTO Faculty (FacultyID, FacultyName, Department, Salary, HireDate, mailid)
+VALUES
+(1, 'Rajesh Sharma', 'Computer Science', 55000, '2018-06-15', 'rajesh@college.edu'),
+(2, 'Neha Patil', 'Electronics', 48000, '2019-03-20', 'neha@college.edu'),
+(3, 'Arjun Mehta', 'Mechanical', 62000, '2017-12-05', 'arjun@college.edu'),
+(4, 'Priya Nair', 'Civil', 51000, '2020-07-10', 'priya@college.edu'),
+(5, 'Karan Desai', 'Computer Science', 70000, '2021-02-28', 'karan@college.edu');
+INSERT INTO Student (StudentID, StudentName, Department)
+VALUES
+(101, 'Amit Kumar', 'Computer Science'),
+(102, 'Sneha Reddy', 'Electronics'),
+(103, 'Ravi Patel', 'Mechanical'),
+(104, 'Divya Sharma', 'Civil'),
+(105, 'Meera Joshi', 'Computer Science');
