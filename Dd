@@ -1,0 +1,26 @@
+CREATE TABLE Faculty (
+    FacultyID INT PRIMARY KEY,
+    FacultyName VARCHAR(255),
+    Department VARCHAR(255),
+    Salary DECIMAL(10, 2),
+    HireDate DATE
+);
+
+ALTER TABLE Faculty
+ADD CONSTRAINT chk_salary CHECK (Salary > 30000);
+ALTER TABLE Faculty
+ADD mailid VARCHAR(255);
+CREATE TABLE Faculty (
+    FacultyID INT PRIMARY KEY,
+    FacultyName VARCHAR(50),
+    Department VARCHAR(50),
+    Salary DECIMAL(10,2),
+    HireDate DATE
+);
+ALTER TABLE Faculty
+ADD mailid VARCHAR(100);ALTER TABLE Faculty
+ADD CONSTRAINT fk_department
+FOREIGN KEY (Department)
+REFERENCES Student(Department);SELECT Department FROM Faculty
+UNION
+SELECT Department FROM Student;
